@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间选择插件示例</title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/datePicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/datePicker.css"></link>
+</head>
+<body>
+    <button class="date-btn">点击显示时间面板</button>
+    <!--时间选择器-->
+    <div class="datePicker-container">
+        <div class="layui-form-pane">
+            <div class="layui-input-inline">
+                <input class="layui-input start-time" placeholder="选择开始时间" id="LAY_demorange_s">
+            </div>
+
+            <div class="layui-input-inline">
+                <input class="layui-input end-time" placeholder="选择结束时间" id="LAY_demorange_e">
+            </div>
+            <div class="date-line">--</div>
+            <div class="submit-btn"></div>
+
+            <div class="close-btn"></div>
+            <div class="date-container">
+
+            </div>
+            <div class="tip">请选择开始时间、结束时间！</div>
+        </div>
+    </div>
+    <script>
+        $.fn.initPicker('month', '.date-btn', 'click' ,callback)
+
+        function callback(startTime, endTime){
+            alert(startTime + ' - ' + endTime)
+        }
+    </script>
+</body>
+</html>
